@@ -1,0 +1,142 @@
+@mixin position{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+$width:30em;
+@mixin circle{
+    border: 4px solid $blue;
+    border-radius:50% ;
+}
+$backcolor:#a8c7fa;
+$blue:#3563ac;
+@mixin pattern{
+    width:$width;
+    @include position;
+    margin-top: 10em;
+}
+@mixin outcircle{
+    width:20em;
+    height:20em;
+    @include circle;
+    @include position;
+}
+body{
+    display: flex;
+    background-color: $backcolor;
+}
+.pattern-1{
+    @include pattern;
+}
+.pattern-1 .circle{
+    @include outcircle;
+}
+.pattern-1 .square{
+    width: 14em;
+    height:14em;
+    border: 4px solid $blue;
+    transform: rotate(45deg);
+    background-color: orange;
+}
+.pattern-1 .square-2{
+    width: 14em;
+    height:14em;
+    border: 4px solid $blue;
+    transform: rotate(45deg); 
+    margin-top: -1px;
+    @include position;
+    background-color: orangered;
+}
+.pattern-1 .circle-2{
+    width:5em;
+    height: 5em;
+    @include circle;
+    background-color: $backcolor;
+}
+.pattern-2{
+   @include pattern;
+}
+.pattern-2 .circle{
+   @include outcircle;
+}
+.pattern-2 .circle-2{
+    width: 8em;
+    height: 20em;
+    @include circle;
+    @include position;
+    background-color: orangered;
+}
+.pattern-2 .square{
+    width: 5.6em;
+    height: 5.6em;
+    transform: rotate(45deg);
+    border: 4px solid $blue;
+    @include position;
+    background-color: #a8c7fa;
+}
+.pattern-2 .circle-3{
+    width: 3em;
+    height: 3em;
+    @include circle;
+    background-color: yellow;
+}
+.pattern-3{
+    @include pattern;
+}
+.pattern-3 .circle{
+    @include outcircle;
+    @include position;
+}
+@mixin line{
+    border-left:4px solid #3563ac;
+    height: 20em;
+}
+.pattern-3 .line-1{
+    @include line;
+}
+.pattern-3 .line-2{
+    @include line;
+    transform: rotate(45deg);
+}
+.pattern-3 .line-3{
+    @include line;
+    transform: rotate(90deg);
+}
+.pattern-3 .line-4{
+    @include line;
+    transform: rotate(120deg);
+}
+.pattern-3 .circle-2{
+    width: 15em;
+    height: 15em;
+    @include circle;
+    position: absolute;
+    display: flex;
+    background-color: orangered;
+}
+@mixin square{
+      width:3em;
+      height:3em;
+      border:4px solid #3563ac;
+      transform: rotate(45deg);
+      background-color: yellow;
+}
+.pattern-3 .square-1{
+    @include square;
+    margin-top: 5.7em;
+    margin-left: 1em;
+}
+.pattern-3 .square-2{
+    width: 2em;
+    height: 15em;
+    border:4px solid #3563ac;
+    margin-left: 1.5em;
+    margin-top: -3px;
+    background-color: yellow;
+}
+.pattern-3 .square-3{
+    @include square;
+    margin-top: 5.7em;
+    margin-left: 2em;
+}
